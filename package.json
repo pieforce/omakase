@@ -4,13 +4,17 @@
   "description": "Machine learning restaurant suggestion app",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "brain.js": "^1.2.1",
+    "express": "^4.16.3",
+    "method-override": "^2.3.10",
+    "morgan": "^1.9.0",
     "yelp-api-v3": "^1.5.0",
     "yelp-fusion": "^2.0.3"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node app.js",
+    "start": "node server.js",
     "test": "test"
   },
   "repository": {
