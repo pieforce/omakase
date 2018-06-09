@@ -24,28 +24,14 @@ client.search({
     open_now: true
   }).then(response => {
     response.jsonBody.businesses.forEach(function(result) {
-        var resultReviewCount = result.review_count;
-        if (isEmpty(resultReviewCount)) {
-            resultReviewCount = 0;
-        } else {
-            resultReviewCount = resultReviewCount / 10000;
-        }
 
-        var resultRating = result.rating;
-        if (isEmpty(resultRating)) {
-            resultRating = 0;
-        } else {
-            resultRating = resultRating / 5;
-        }
+        // If no price is returned, assume one dollar sign ($ / $$$$) or 1/4 = 0.25
+        // If valid price range, count # of dollar signs
+        var resultPrice = isEmpty(result.price) ? 0.25 : ((result.price.split('$').length - 1) / 4);
+        var resultReviewCount = isEmpty(result.rating) ? 0 : result.review_count / 10000;
+        var resultRating = isEmpty(result.rating) ? 0 : result.rating / 5;
 
-        var resultPrice = result.price;
-        if (isEmpty(resultPrice)) {
-            resultPrice = 0.25; // If no price range, assume one dollar sign ($ / $$$$)
-        } else {
-            resultPrice = (result.price.split('$').length - 1) / 4; // Count # of dollar signs
-        }
-
-        // Run analysis and print result
+        // Run neural net analysis and print result
         var output = trainedNet({ 
             review_count: resultReviewCount,
             rating: resultRating,
