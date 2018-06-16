@@ -32,6 +32,7 @@ module.exports = function (app) {
 
     // Perform Yelp search and run neural net analysis on each result
     app.get('/api/search/:searchStr/:location/:resultLimit', function (req, res) {
+
         var searchStr = req.params.searchStr.replace('%20', ' ');
         var location = req.params.location.replace('%20', ' ');
         var resultLimit = req.params.resultLimit;
@@ -43,6 +44,11 @@ module.exports = function (app) {
         } else if (resultLimit < 0) {
             resultLimit = 5;
         }
+
+        console.log('!----------[SEARCH]----------!');
+        console.log(' * searchStr: ' + searchStr);
+        console.log(' * location: ' + location);
+        console.log('!----------[SEARCH]----------!');
 
         YELP_CLIENT.search({
             term: searchStr,
@@ -59,8 +65,6 @@ module.exports = function (app) {
                 var resultReviewCount = isEmpty(result.review_count) ? 0 : result.review_count / MAX_NUM_REVIEWS;
                 var resultRating = isEmpty(result.rating) ? 0 : result.rating / MAX_NUM_STARS;
                 var resultId = getHash(result.id);
-
-                console.log(resultId);
     
                 // Run neural net analysis and print result
                 var output = net.run({ 
@@ -81,6 +85,11 @@ module.exports = function (app) {
     // Get details of a business based on Yelp ID
     app.get('/api/details/:id', function (req, res) {
         YELP_CLIENT.business(req.params.id).then(response => {
+
+            console.log('!----------[DETAIL LOOKUP]----------!');
+            console.log(' * restId: ' + req.params.id);
+            console.log('!----------[DETAIL LOOKUP]----------!');
+
             res.json(response.jsonBody);
         }).catch(e => {
             console.log(e);
@@ -105,6 +114,12 @@ module.exports = function (app) {
                 rating: resultRating,
                 price: resultPrice
             });
+
+            console.log('!----------[APPEAL LOOKUP]----------!');
+            console.log(' * restId: ' + resultRestId);
+            console.log(' * appeal: ' + output.appeal);
+            console.log('!----------[APPEAL LOOKUP]----------!');
+
             // Return appeal as percentage
             res.json({'id': resultRestId, 'appeal': (output.appeal * 100).toFixed(0)});
         }).catch(e => {
@@ -139,12 +154,17 @@ module.exports = function (app) {
             adjAppeal = 0;
         }
 
-        console.log('restId ' + restId);
-        console.log('appeal ' + appeal);
-        console.log('adjAppeal ' + adjAppeal);
-        console.log('reviewCount ' + reviewCount);
-        console.log('Rated ' + req.params.id + ': ' + userRating);
-        console.log('New user appeal ' + req.params.id + ': ' + userRating);
+        console.log('!----------[RATED]----------!');
+        console.log(' * restId: ' + req.params.id);
+        console.log(' * restIdHash: ' + restId);
+        console.log(' * rating: ' + userRating);
+        console.log(' * appeal: ' + appeal);
+        console.log(' * adjAppeal: ' + adjAppeal);
+        console.log('!----------[RATED]----------!');
+
+        res.json({'id': restId, 'appeal': (adjAppeal * 100).toFixed(0)});        
+
+        // Feed rating info to neural network to train it
         net.train({ 
             input: {
                 id: restId,
@@ -156,7 +176,38 @@ module.exports = function (app) {
                 appeal: adjAppeal
             }
         });
-        res.json({'id': restId, 'appeal': (adjAppeal * 100).toFixed(0)});
+
+        // Save rating info to training database
+        mongo.connect(apiConfig.mlabUrl, (err, db) => {
+            if (err) throw err;
+            var dbo = db.db(apiConfig.mlabDatabase);
+            dbo.collection(apiConfig.mlabCollection).update(
+                { 
+                    info: {
+                        snapshot: apiConfig.mlabSnapshot
+                    } 
+                },
+                {
+                    $push: {
+                        data: {
+                            input: {
+                                id: restId,
+                                review_count: reviewCount,
+                                rating: numStars,
+                                price: numDollarSigns
+                            },
+                            output: {
+                                appeal: adjAppeal
+                            }
+                        }
+                    }
+                }, function(err, result) {
+                    if (err) throw err;
+                    console.log('MongoDB updates: ' + result.result.n);
+                    db.close();
+                }
+            );
+        });
     });
 
     // application -------------------------------------------------------------
