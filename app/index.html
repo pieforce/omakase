@@ -29,29 +29,31 @@
         <div class="container">
             <!-- HEADER AND RESULT COUNT -->
             <div class="jumbotron text-center">
-                <h1 style="color:orangered" class="display-2">O M A K A S E</h1>
-                <h5 style="color:black">Discover the best restaurants in your area using machine learning</h5>
+                <h4 style="color:orangered" class="display-4">O M A K A S E</h4>
+                <span class="font-weight-light" style="color:black">Discover the best restaurants in your area using machine learning</span>
 
                 <!-- FORM TO SEARCH -->
-                <div id="search-form" class="d-flex justify-content-center" style="padding:2%" ng-show="!loading">
+                <div id="search-form" class="d-flex justify-content-center" style="padding:2%">
                     <!-- <div class="col-sm-8 col-sm-offset-2 text-center"> -->
                     <div class="col-md-5 col-md-offset-2 text-center">
-                        <form>
+                        <form  ng-show="!loading">
                             <div class="form-group">
-    
                                 <!-- BIND THIS VALUE TO location.text IN ANGULAR -->
                                 <input type="text" class="form-control input-md text-center" placeholder="Where are you now?" ng-model="location.text">
+                                
                             </div>
     
                             <!-- getResults() WILL CREATE NEW RESULTS -->
                             <button type="submit" class="btn btn-primary btn-md" ng-click="getRestaurantResults()">Discover</button>
                             <button class="btn btn-secondary btn-md">Decide!</button>
                         </form>
+                        <br>
+                        <h2 class="font-weight-light font-italic" ng-show="loading">Running neural net...</h2>
                     </div>
                 </div>
             </div>
 
-            <h1 ng-show="loading">Computing...</h1>
+            
 
             <!-- RESULT LIST -->
             <div style="padding:3%">

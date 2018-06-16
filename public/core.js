@@ -7,7 +7,7 @@ function mainController($scope, $http) {
 
     $scope.getResults = function(searchStr) {
         $scope.loading = true;
-        $http.get('/api/search/' + searchStr + '/' +  $scope.location.text + '/20')
+        $http.get('/api/search/' + searchStr + '/' +  $scope.location.text + '/50')
             .success(function(data) {
                 $scope.results = data;
                 $scope.loading = false;
@@ -20,7 +20,7 @@ function mainController($scope, $http) {
 
     $scope.getRestaurantResults = function() {
         $scope.loading = true;
-        $http.get('/api/search/restaurants/' +  $scope.location.text + '/20')
+        $http.get('/api/search/restaurants/' +  $scope.location.text + '/50')
             .success(function(data) {
                 $scope.results = data;
                 $scope.loading = false;
