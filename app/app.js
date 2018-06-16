@@ -21,7 +21,6 @@ mongo.connect(apiConfig.mlabUrl, (err, db) => {
     var dbo = db.db(apiConfig.mlabDatabase);
     dbo.collection(apiConfig.mlabCollection).findOne({'info.snapshot' : apiConfig.mlabSnapshot}, function(err, result) {
         if (err) throw err;
-        console.log(result.data);
         net.train(result.data);
         trainedNet = net.toFunction();
         db.close();
@@ -133,7 +132,12 @@ module.exports = function (app) {
         // Formula for adjusting current appeal based on user input
         //   *Assumption: userRating is a float between 0 and 1
         //   *Assumption: appeal is a float between 0 and 1
-        var adjAppeal = appeal * (1 + ((userRating - appeal) * 0.1))
+        var adjAppeal = appeal * (1 + ((userRating - appeal) * 1.25))
+        if (adjAppeal > 1) {
+            adjAppeal = 1;
+        } else if (adjAppeal < 0) {
+            adjAppeal = 0;
+        }
 
         console.log('restId ' + restId);
         console.log('appeal ' + appeal);
@@ -178,7 +182,6 @@ function getHash(str) {
         hash = hash & hash; // Convert to 32bit integer08
     }
     hash = '0.' + Math.abs(hash);
-    console.log(hash);
     return hash;
 
 }
