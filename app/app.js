@@ -24,6 +24,10 @@ mongo.connect(apiConfig.mlabUrl, (err, db) => {
         net.train(result.data);
         trainedNet = net.toFunction();
         db.close();
+
+        console.log('!----------[BRAIN START]----------!');
+        console.log(' * Training snapshot loaded: ' + apiConfig.mlabSnapshot);
+        console.log('!----------[BRAIN START]----------!');
     });
 });
 
@@ -74,7 +78,7 @@ module.exports = function (app) {
                     price: resultPrice
                 });
                 // Insert appeal as percentage
-                response.jsonBody.businesses[i]['appeal'] = (output.appeal * 100).toFixed(0);
+                response.jsonBody.businesses[i]['appeal'] = parseInt((output.appeal * 100).toFixed(0));
             }
             res.json(response.jsonBody.businesses);
         }).catch(e => {
@@ -147,7 +151,8 @@ module.exports = function (app) {
         // Formula for adjusting current appeal based on user input
         //   *Assumption: userRating is a float between 0 and 1
         //   *Assumption: appeal is a float between 0 and 1
-        var adjAppeal = appeal * (1 + ((userRating - appeal) * 1.25))
+        //   *Note: Divisor controls magnitude of rating impact - Higher divisor, lower impact
+        var adjAppeal = appeal * (1 + ((userRating - appeal) / 30))
         if (adjAppeal > 1) {
             adjAppeal = 1;
         } else if (adjAppeal < 0) {

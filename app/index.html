@@ -29,7 +29,7 @@
         <div class="container">
             <!-- HEADER AND RESULT COUNT -->
             <div class="jumbotron text-center">
-                <h4 style="color:orangered" class="display-4">O M A K A S E</h4>
+                <h4 style="color:orangered" class="display-4">OMAKASE</h4>
                 <span class="font-weight-light" style="color:black">Discover the best restaurants in your area using machine learning</span>
 
                 <!-- FORM TO SEARCH -->
@@ -45,7 +45,7 @@
     
                             <!-- getResults() WILL CREATE NEW RESULTS -->
                             <button type="submit" class="btn btn-primary btn-md" ng-click="getRestaurantResults()">Discover</button>
-                            <button class="btn btn-secondary btn-md">Decide!</button>
+                            <button type="submit" class="btn btn-secondary btn-md" ng-click="getTopRestaurantResult()">Decide!</button>
                         </form>
                         <br>
                         <h2 class="font-weight-light font-italic" ng-show="loading">Running neural net...</h2>
@@ -67,14 +67,14 @@
                         <div class="media-body">
                             <h3 class="mt-0"><a href="{{ result.url }}">{{ result.name }}</a> ({{ result.appeal }}%)</h3>
                             <p>
-                                <form>
+                                <form class="rating-form-{{result.id}}">
                                     Rate this place: 
                                     <br>
-                                    <button class="btn btn-outline-danger btn-sm" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 1)">★</button>
-                                    <button class="btn btn-outline-danger btn-sm" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 2)">★</button>
-                                    <button class="btn btn-outline-danger btn-sm" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 3)">★</button>
-                                    <button class="btn btn-outline-danger btn-sm" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 4)">★</button>
-                                    <button class="btn btn-outline-danger btn-sm" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 5)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-1" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 1)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-2" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 2)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-3" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 3)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-4" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 4)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-5" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 5)">★</button>
                                 </form>
                             </p>
                             <p>
