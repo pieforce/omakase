@@ -13,51 +13,60 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <link rel="stylesheet" href="anim.css">
         <style>
-            html                    { overflow-y:scroll; }
-            body                    { padding-top:50px; }
-            #todo-list              { margin-bottom:30px; }
+            html            { overflow-y:scroll; }
+            body            { padding-top:20px; }
+            #results-list   { margin-bottom:30px; }
         </style>
 
         <!-- SPELLS -->
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script><!-- load angular -->
         <script src="core.js"></script>
-
     </head>
+
     <!-- SET THE CONTROLLER AND GET ALL RESULTS -->
     <body ng-controller="mainController">
         <div class="container">
             <!-- HEADER AND RESULT COUNT -->
             <div class="jumbotron text-center">
                 <h4 style="color:orangered" class="display-4">OMAKASE</h4>
-                <span class="font-weight-light" style="color:black">Discover the best restaurants in your area using machine learning</span>
+                <span class="text-center text-muted">Discover the best restaurants in your area using machine learning</span>
 
                 <!-- FORM TO SEARCH -->
-                <div id="search-form" class="d-flex justify-content-center" style="padding:2%">
+                <div id="search-form" class="d-flex justify-content-center" style="padding:1%">
                     <!-- <div class="col-sm-8 col-sm-offset-2 text-center"> -->
                     <div class="col-md-5 col-md-offset-2 text-center">
-                        <form  ng-show="!loading">
+
+                        <br>
+                        <div ng-show="!showLocationEntry" class="font-weight-bold" style="color:black">Use GPS location?</div>
+                        <button type="submit" class="btn btn-primary btn-md" ng-show="!showLocationEntry" ng-click="getLocation();toggleLocationEntry();">Yes</button>
+                        <button class="btn btn-secondary btn-md" ng-show="!showLocationEntry" ng-click="toggleLocationEntry()">No</button>
+                        <div ng-show="!showLocationEntry" class="font-weight-light font-italic" style="color:black">No location data is saved</div>
+
+                        <form ng-show="!loading && showLocationEntry">
                             <div class="form-group">
                                 <!-- BIND THIS VALUE TO location.text IN ANGULAR -->
-                                <input type="text" class="form-control input-md text-center" placeholder="Where are you now?" ng-model="location.text">
-                                
+                                <input id="location" type="text" class="form-control input-md" placeholder="Where are you now?" ng-model="location.text">
                             </div>
     
-                            <!-- getResults() WILL CREATE NEW RESULTS -->
+                            <!-- getRestaurantResults() WILL CREATE NEW RESULTS -->
                             <button type="submit" class="btn btn-primary btn-md" ng-click="getRestaurantResults()">Discover</button>
-                            <button type="submit" class="btn btn-secondary btn-md" ng-click="getTopRestaurantResult()">Decide!</button>
+                            <button type="submit" class="btn btn-secondary btn-md" ng-click="getBestRestaurant()">Decide!</button>
                         </form>
-                        <br>
-                        <h2 class="font-weight-light font-italic" ng-show="loading">Running neural net...</h2>
+
+                        <div id="accuracy" ng-show="loading" class="text-center text-muted"></div>
+                        <!-- <h2 class="font-weight-light font-italic" ng-show="loading">Running neural net...</h2> -->
+                        <div class="progress" style="height: 50%;" ng-show="loading">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">Running neural network...</div>
+                        </div>
                     </div>
                 </div>
             </div>
-
             
-
             <!-- RESULT LIST -->
-            <div style="padding:3%">
-                <ul class="list-unstyled" >
+            <div id="results-list" style="padding:3%">
+                <ul class="list-unstyled">
                     <!-- LOOP OVER THE RESULTS IN $scope.results -->
                     <li class="media" ng-repeat="result in results | orderBy:'-appeal'">
                         <img style="max-width: 30%" class="align-self-start mr-3" src="{{ result.image_url }}" alt="{{ result.name }}">
@@ -68,13 +77,12 @@
                             <h3 class="mt-0"><a href="{{ result.url }}">{{ result.name }}</a> ({{ result.appeal }}%)</h3>
                             <p>
                                 <form class="rating-form-{{result.id}}">
-                                    Rate this place: 
-                                    <br>
-                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-1" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 1)">★</button>
-                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-2" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 2)">★</button>
-                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-3" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 3)">★</button>
-                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-4" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 4)">★</button>
-                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-5" ng-click="rate(result.id, result.review_count, result.rating, result.price, result.appeal, 5)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-1" ng-click="updateUserRating(result.id, 1)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-2" ng-click="updateUserRating(result.id, 2)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-3" ng-click="updateUserRating(result.id, 3)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-4" ng-click="updateUserRating(result.id, 4)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-5" ng-click="updateUserRating(result.id, 5)">★</button>
+                                    <a href="" name="rating-submit-{{result.id}}" ng-click="submitRating(result.id, result.review_count, result.rating, result.price, result.appeal)"> Submit rating</a>
                                 </form>
                             </p>
                             <p>
@@ -90,31 +98,9 @@
                                 <div>{{ (result.distance * 0.00062137).toFixed(2) }} mi</div>
                             </p>
                         </div>
-                        <!-- <table class="table">
-                            <tr >{{ (result.distance * 0.00062137).toFixed(2) }} mi</tr>
-                            <tr >
-                                {{ result.location.address1 }}
-                                <br>{{ result.location.city }}, {{ result.location.state }} {{ result.location.zip_code }}
-                            </tr>
-                            <tr >{{ result.phone }}</tr>
-                        </table> -->
                     </li>
                 </ul>
             </div>
         </div>
     </body>
-    <script>
-        var x = document.getElementById("demo");
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
-            }
-        }
-        function showPosition(position) {
-            x.innerHTML = "Latitude: " + position.coords.latitude + 
-            "<br>Longitude: " + position.coords.longitude; 
-        }
-    </script>
 </html>
