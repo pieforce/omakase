@@ -75,7 +75,7 @@ module.exports = function (app) {
                     price: resultPrice
                 });
                 // Insert appeal as percentage
-                response.jsonBody.businesses[i]['appeal'] = (output.appeal * 100).toFixed(0);
+                response.jsonBody.businesses[i]['appeal'] = parseInt((output.appeal * 100).toFixed(0));
             }
             res.json(response.jsonBody.businesses);
         }).catch(e => {
@@ -126,7 +126,7 @@ module.exports = function (app) {
                 }
 
                 // Insert appeal as percentage
-                response.jsonBody.businesses[i]['appeal'] = (output.appeal * 100).toFixed(0);
+                response.jsonBody.businesses[i]['appeal'] = parseInt((output.appeal * 100).toFixed(0));
             }
             res.json(response.jsonBody.businesses[bestResultIndex]);
         }).catch(e => {
@@ -173,7 +173,7 @@ module.exports = function (app) {
             console.log('!----------[APPEAL LOOKUP]----------!');
 
             // Return appeal as percentage
-            res.json({'id': resultRestId, 'appeal': (output.appeal * 100).toFixed(0)});
+            res.json({'id': resultRestId, 'appeal': parseInt((output.appeal * 100).toFixed(0))});
         }).catch(e => {
             console.log(e);
         });
