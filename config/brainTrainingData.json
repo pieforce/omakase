@@ -1,1692 +1,2202 @@
 [
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 1,
             "price": 0.25
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 0.8,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.8 
+        },
+        "output": {
+            "appeal": 0.9
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 0.6,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.5 
+        },
+        "output": {
+            "appeal": 0.5
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 0.4,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0.1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 0.2,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 1,
             "price": 0.5
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 0.8,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.8 
+        },
+        "output": {
+            "appeal": 0.8
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 0.6,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.3 
+        },
+        "output": {
+            "appeal": 0.3
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 0.4,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 0.2,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 1,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.9 
+        },
+        "output": {
+            "appeal": 0.9
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 0.8,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.7 
+        },
+        "output": {
+            "appeal": 0.7
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 1,
             "rating": 0.6,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.1 
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 1,
-            "rating": 0.4,
-            "price": 0.75
-        }, "output": { 
-            "appeal": 0
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 1,
-            "rating": 0.2,
-            "price": 0.75
-        }, "output": { 
-            "appeal": 0
-        }
-    }, 
-
-    
-    {
-        "input": { 
-            "review_count": 1,
-            "rating": 1,
-            "price": 1
-        }, "output": { 
-            "appeal": 0.8 
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 1,
-            "rating": 0.8,
-            "price": 1
-        }, "output": { 
-            "appeal": 0.5 
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 1,
-            "rating": 0.6,
-            "price": 1
-        }, "output": { 
-            "appeal": 0
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 1,
-            "rating": 0.4,
-            "price": 1
-        }, "output": { 
-            "appeal": 0
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 1,
-            "rating": 0.2,
-            "price": 1
-        }, "output": { 
-            "appeal": 0
-        }
-    }, 
-
-
-    {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 1,
-            "price": 0.25
-        }, "output": { 
-            "appeal": 1 
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 0.8,
-            "price": 0.25
-        }, "output": { 
-            "appeal": 0.8 
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 0.6,
-            "price": 0.25
-        }, "output": { 
-            "appeal": 0.5 
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 0.4,
-            "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0.1
         }
-    }, 
+    },
     {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 0.2,
-            "price": 0.25
-        }, "output": { 
-            "appeal": 0
-        }
-    }, 
-
-    
-    {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 1,
-            "price": 0.5
-        }, "output": { 
-            "appeal": 1 
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 0.8,
-            "price": 0.5
-        }, "output": { 
-            "appeal": 0.8 
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 0.6,
-            "price": 0.5
-        }, "output": { 
-            "appeal": 0.3 
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 0.4,
-            "price": 0.5
-        }, "output": { 
-            "appeal": 0
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 0.2,
-            "price": 0.5
-        }, "output": { 
-            "appeal": 0
-        }
-    }, 
-
-    
-    {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 1,
-            "price": 0.75
-        }, "output": { 
-            "appeal": 0.9 
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 0.8,
-            "price": 0.75
-        }, "output": { 
-            "appeal": 0.7 
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 0.5,
-            "rating": 0.6,
-            "price": 0.75
-        }, "output": { 
-            "appeal": 0.1 
-        }
-    }, 
-    {
-        "input": { 
-            "review_count": 0.5,
+        "input": {
+            "review_count": 1,
             "rating": 0.4,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
-            "review_count": 0.5,
+        "input": {
+            "review_count": 1,
             "rating": 0.2,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
-            "review_count": 0.5,
+        "input": {
+            "review_count": 1,
             "rating": 1,
             "price": 1
-        }, "output": { 
-            "appeal": 0.8 
+        },
+        "output": {
+            "appeal": 0.8
         }
-    }, 
+    },
     {
-        "input": { 
-            "review_count": 0.5,
+        "input": {
+            "review_count": 1,
             "rating": 0.8,
             "price": 1
-        }, "output": { 
-            "appeal": 0.5 
+        },
+        "output": {
+            "appeal": 0.5
         }
-    }, 
+    },
     {
-        "input": { 
-            "review_count": 0.5,
+        "input": {
+            "review_count": 1,
             "rating": 0.6,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
-            "review_count": 0.5,
+        "input": {
+            "review_count": 1,
             "rating": 0.4,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
-            "review_count": 0.5,
+        "input": {
+            "review_count": 1,
             "rating": 0.2,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-
+    },
     {
-        "input": { 
-            "review_count": 0.2,
+        "input": {
+            "review_count": 0.5,
             "rating": 1,
             "price": 0.25
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
-            "review_count": 0.2,
+        "input": {
+            "review_count": 0.5,
             "rating": 0.8,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.8 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
-            "review_count": 0.2,
+        "input": {
+            "review_count": 0.5,
             "rating": 0.6,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.5 
+        },
+        "output": {
+            "appeal": 0.5
         }
-    }, 
+    },
     {
-        "input": { 
-            "review_count": 0.2,
+        "input": {
+            "review_count": 0.5,
             "rating": 0.4,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0.1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.2,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 1,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 1
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.8,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0.8
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.6,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0.3
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.4,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.2,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 1,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0.9
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.8,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0.7
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.6,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0.1
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.4,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.2,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 1,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0.8
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.8,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0.5
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.6,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.4,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.5,
+            "rating": 0.2,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.2,
+            "rating": 1,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 1
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.2,
+            "rating": 0.8,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0.8
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.2,
+            "rating": 0.6,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0.5
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.2,
+            "rating": 0.4,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0.1
+        }
+    },
+    {
+        "input": {
             "review_count": 0.2,
             "rating": 0.2,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 1,
             "price": 0.5
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 0.8,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.8 
+        },
+        "output": {
+            "appeal": 0.8
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 0.6,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.3 
+        },
+        "output": {
+            "appeal": 0.3
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 0.4,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 0.2,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 1,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.9 
+        },
+        "output": {
+            "appeal": 0.9
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 0.8,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.7 
+        },
+        "output": {
+            "appeal": 0.7
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 0.6,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.1 
+        },
+        "output": {
+            "appeal": 0.1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 0.4,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 0.2,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 1,
             "price": 1
-        }, "output": { 
-            "appeal": 0.8 
+        },
+        "output": {
+            "appeal": 0.8
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 0.8,
             "price": 1
-        }, "output": { 
-            "appeal": 0.5 
+        },
+        "output": {
+            "appeal": 0.5
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 0.6,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 0.4,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.2,
             "rating": 0.2,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 1,
             "price": 0.25
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.8,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.7 
+        },
+        "output": {
+            "appeal": 0.7
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.6,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.4 
+        },
+        "output": {
+            "appeal": 0.4
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.4,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.2,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 1,
             "price": 0.5
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.8,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.7 
+        },
+        "output": {
+            "appeal": 0.7
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.6,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.1 
+        },
+        "output": {
+            "appeal": 0.1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.4,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.2,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 1,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.9 
+        },
+        "output": {
+            "appeal": 0.9
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.8,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.7 
+        },
+        "output": {
+            "appeal": 0.8
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.6,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.1 
+        },
+        "output": {
+            "appeal": 0.1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.4,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.2,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 1,
             "price": 1
-        }, "output": { 
-            "appeal": 0.8 
+        },
+        "output": {
+            "appeal": 0.7
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.8,
             "price": 1
-        }, "output": { 
-            "appeal": 0.5 
+        },
+        "output": {
+            "appeal": 0.5
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.6,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.4,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.1,
             "rating": 0.2,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 1,
             "price": 0.25
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.8,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.7 
+        },
+        "output": {
+            "appeal": 0.85
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.6,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.3 
+        },
+        "output": {
+            "appeal": 0.3
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.4,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.2,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 1,
             "price": 0.5
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.8,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.6 
+        },
+        "output": {
+            "appeal": 0.8
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.6,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.1 
+        },
+        "output": {
+            "appeal": 0.2
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.4,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.2,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 1,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.9 
+        },
+        "output": {
+            "appeal": 0.9
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.8,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.5 
+        },
+        "output": {
+            "appeal": 0.8
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.6,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.1 
+        },
+        "output": {
+            "appeal": 0.1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.4,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.2,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 1,
             "price": 1
-        }, "output": { 
-            "appeal": 0.7 
+        },
+        "output": {
+            "appeal": 0.7
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.8,
             "price": 1
-        }, "output": { 
-            "appeal": 0.3 
+        },
+        "output": {
+            "appeal": 0.3
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.6,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.4,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.05,
             "rating": 0.2,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 1,
             "price": 0.25
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.8,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.7 
+        },
+        "output": {
+            "appeal": 0.85
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.6,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.3 
+        },
+        "output": {
+            "appeal": 0.3
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.4,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.2,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 1,
             "price": 0.5
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.8,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.6 
+        },
+        "output": {
+            "appeal": 0.6
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.6,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.1 
+        },
+        "output": {
+            "appeal": 0.1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.4,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.2,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 1,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.9 
+        },
+        "output": {
+            "appeal": 0.9
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.8,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.5 
+        },
+        "output": {
+            "appeal": 0.75
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.6,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0 
+        },
+        "output": {
+            "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.4,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.2,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 1,
             "price": 1
-        }, "output": { 
-            "appeal": 0.7 
+        },
+        "output": {
+            "appeal": 0.7
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.8,
             "price": 1
-        }, "output": { 
-            "appeal": 0.3 
+        },
+        "output": {
+            "appeal": 0.3
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.6,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.4,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.025,
             "rating": 0.2,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 1,
             "price": 0.25
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.8,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.6 
+        },
+        "output": {
+            "appeal": 0.8
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.6,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.1 
+        },
+        "output": {
+            "appeal": 0.1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.4,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.2,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 1,
             "price": 0.5
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.8,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.6 
+        },
+        "output": {
+            "appeal": 0.75
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.6,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0 
+        },
+        "output": {
+            "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.4,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.2,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 1,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.9 
+        },
+        "output": {
+            "appeal": 0.9
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.8,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.5 
+        },
+        "output": {
+            "appeal": 0.7
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.6,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0 
+        },
+        "output": {
+            "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.4,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.2,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 1,
             "price": 1
-        }, "output": { 
-            "appeal": 0.6 
+        },
+        "output": {
+            "appeal": 0.6
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.8,
             "price": 1
-        }, "output": { 
-            "appeal": 0.3 
+        },
+        "output": {
+            "appeal": 0.4
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.6,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.4,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.01,
             "rating": 0.2,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 1,
             "price": 0.25
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.8,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.5 
+        },
+        "output": {
+            "appeal": 0.8
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.6,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.1 
+        },
+        "output": {
+            "appeal": 0.1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.4,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.2,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 1,
             "price": 0.5
-        }, "output": { 
-            "appeal": 1 
+        },
+        "output": {
+            "appeal": 1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.8,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.6 
+        },
+        "output": {
+            "appeal": 0.7
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.6,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0 
+        },
+        "output": {
+            "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.4,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.2,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 1,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.8 
+        },
+        "output": {
+            "appeal": 0.8
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.8,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.4 
+        },
+        "output": {
+            "appeal": 0.4
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.6,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0 
+        },
+        "output": {
+            "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.4,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.2,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 1,
             "price": 1
-        }, "output": { 
-            "appeal": 0.5 
+        },
+        "output": {
+            "appeal": 0.5
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.8,
             "price": 1
-        }, "output": { 
-            "appeal": 0.3 
+        },
+        "output": {
+            "appeal": 0.3
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.6,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.4,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.005,
             "rating": 0.2,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-
+    },
     {
-        "input": { 
+        "input": {
+            "review_count": 0.003,
+            "rating": 1,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 1
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.8,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0.7
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.6,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.4,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.2,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 1,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0.9
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.8,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0.7
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.6,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.4,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.2,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 1,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0.7
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.8,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0.6
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.6,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.4,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.2,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 1,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0.3
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.8,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0.1
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.6,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.4,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.003,
+            "rating": 0.2,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
             "review_count": 0.001,
             "rating": 1,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.7 
+        },
+        "output": {
+            "appeal": 0.9
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.8,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0.3 
+        },
+        "output": {
+            "appeal": 0.8
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.6,
             "price": 0.25
-        }, "output": { 
-            "appeal": 0 
+        },
+        "output": {
+            "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.4,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.2,
             "price": 0.25
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 1,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.8 
+        },
+        "output": {
+            "appeal": 0.8
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.8,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0.5 
+        },
+        "output": {
+            "appeal": 0.6
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.6,
             "price": 0.5
-        }, "output": { 
-            "appeal": 0 
+        },
+        "output": {
+            "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.4,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.2,
             "price": 0.5
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 1,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.6 
+        },
+        "output": {
+            "appeal": 0.6
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.8,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0.3 
+        },
+        "output": {
+            "appeal": 0.5
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.6,
             "price": 0.75
-        }, "output": { 
-            "appeal": 0 
+        },
+        "output": {
+            "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.4,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.2,
             "price": 0.75
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
-
-    
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 1,
             "price": 1
-        }, "output": { 
-            "appeal": 0.3 
+        },
+        "output": {
+            "appeal": 0.3
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.8,
             "price": 1
-        }, "output": { 
-            "appeal": 0.1 
+        },
+        "output": {
+            "appeal": 0.1
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.6,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.4,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
             "appeal": 0
         }
-    }, 
+    },
     {
-        "input": { 
+        "input": {
             "review_count": 0.001,
             "rating": 0.2,
             "price": 1
-        }, "output": { 
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 1,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0.4
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.8,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0.3
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.6,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.4,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.2,
+            "price": 0.25
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 1,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0.6
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.8,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0.5
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.6,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.4,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.2,
+            "price": 0.5
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 1,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0.4
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.8,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0.3
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.6,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.4,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.2,
+            "price": 0.75
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 1,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0.3
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.8,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0.1
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.6,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.4,
+            "price": 1
+        },
+        "output": {
+            "appeal": 0
+        }
+    },
+    {
+        "input": {
+            "review_count": 0.0001,
+            "rating": 0.2,
+            "price": 1
+        },
+        "output": {
             "appeal": 0
         }
     }
-]    
+]

@@ -3,5 +3,5 @@ module.exports = {
     mlabUrl : 'mongodb://omakasereadwrite:OmakaseReadWrite1@ds163410.mlab.com:63410/omakase',
     mlabDatabase : 'omakase',
     mlabCollection : 'brain',
-    mlabSnapshot : '06-16-2018-18:12'
+    mlabSnapshot : '06-17-2018-00:38'
 };
