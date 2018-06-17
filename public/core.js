@@ -17,13 +17,13 @@ function mainController($scope, $http) {
     $scope.getLocation = function() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(pos) {
-                var longitude = pos.coords.longitude;
                 var latitude = pos.coords.latitude;
+                var longitude = pos.coords.longitude;
                 var accuracy = pos.coords.accuracy;
                 $scope.showAccuracy = true;
-                $scope.location.text = longitude + ', ' + latitude;
-                document.getElementById('accuracy').textContent = 'GPS accuracy: ' + (accuracy * 0.00062137).toFixed(2) + ' mi';
-                document.getElementById('location').value = longitude + ', ' + latitude;
+                $scope.location.text = latitude + ', ' + longitude;
+                document.getElementById('accuracy').textContent = 'Geoloc accuracy: ' + (accuracy * 0.00062137).toFixed(2) + ' mi';
+                document.getElementById('location').value = latitude + ', ' + longitude;
             });
         } else {
             alert('Geolocation is not supported by this browser');
