@@ -18,6 +18,19 @@ function mainController($scope, $http) {
             })
     }
 
+    $scope.getBestRestaurant = function() {
+        $scope.loading = true;
+        $http.get('/api/decide/restaurants/' + $scope.location.text)
+            .success(function(data) {
+                $scope.results = data;
+                $scope.loading = false;
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+                $scope.loading = false;
+            })
+    }
+
     $scope.getRestaurantResults = function() {
         $scope.loading = true;
         $http.get('/api/search/restaurants/' +  $scope.location.text + '/30')
