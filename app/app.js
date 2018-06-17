@@ -12,6 +12,7 @@ const YELP_CLIENT = yelp.client(apiConfig.yelpApiKey);
 const MAX_NUM_REVIEWS = 100000;
 const MAX_NUM_STARS = 5;
 const MAX_NUM_DOLLAR_SIGNS = 4;
+const MAX_NUM_SEARCH_RESULTS = 50;
 
 // Train neural net
 var net = new brain.NeuralNetwork();
@@ -77,6 +78,57 @@ module.exports = function (app) {
                 response.jsonBody.businesses[i]['appeal'] = (output.appeal * 100).toFixed(0);
             }
             res.json(response.jsonBody.businesses);
+        }).catch(e => {
+            console.log(e);
+        });
+    });
+
+    // Get the best-ranked result after performing Yelp search and running neural net analysis on each result
+    app.get('/api/decide/:searchStr/:location', function (req, res) {
+
+        var searchStr = req.params.searchStr.replace('%20', ' ');
+        var location = req.params.location.replace('%20', ' ');
+
+        console.log('!----------[DECIDE]----------!');
+        console.log(' * searchStr: ' + searchStr);
+        console.log(' * location: ' + location);
+        console.log('!----------[DECIDE]----------!');
+
+        YELP_CLIENT.search({
+            term: searchStr,
+            location: location,
+            limit: MAX_NUM_SEARCH_RESULTS,
+            sort_by: 'rating',
+            open_now: true
+        }).then(response => {
+            var bestResultIndex = 0;
+            var bestResultAppeal = 0.00;
+            for (var i=0; i < response.jsonBody.businesses.length; i++) {
+                var result = response.jsonBody.businesses[i];
+                // If no price is returned, assume one dollar sign ($ / $$$$) or 1/4 = 0.25
+                // If valid price range, count # of dollar signs
+                var resultPrice = isEmpty(result.price) ? 0.25 : ((result.price.split('$').length - 1) / MAX_NUM_DOLLAR_SIGNS);
+                var resultReviewCount = isEmpty(result.review_count) ? 0 : result.review_count / MAX_NUM_REVIEWS;
+                var resultRating = isEmpty(result.rating) ? 0 : result.rating / MAX_NUM_STARS;
+                var resultId = getHash(result.id);
+    
+                // Run neural net analysis and print result
+                var output = net.run({ 
+                    id : resultId,
+                    review_count: resultReviewCount,
+                    rating: resultRating,
+                    price: resultPrice
+                });
+
+                if (output.appeal > bestResultAppeal) {
+                    bestResultIndex = i;
+                    bestResultAppeal = output.appeal;
+                }
+
+                // Insert appeal as percentage
+                response.jsonBody.businesses[i]['appeal'] = (output.appeal * 100).toFixed(0);
+            }
+            res.json(response.jsonBody.businesses[bestResultIndex]);
         }).catch(e => {
             console.log(e);
         });

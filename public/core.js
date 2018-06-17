@@ -7,7 +7,20 @@ function mainController($scope, $http) {
 
     $scope.getResults = function(searchStr) {
         $scope.loading = true;
-        $http.get('/api/search/' + searchStr + '/' +  $scope.location.text + '/20')
+        $http.get('/api/search/' + searchStr + '/' + $scope.location.text + '/20')
+            .success(function(data) {
+                $scope.results = data;
+                $scope.loading = false;
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+                $scope.loading = false;
+            })
+    }
+
+    $scope.getBestRestaurant = function() {
+        $scope.loading = true;
+        $http.get('/api/decide/restaurants/' + $scope.location.text)
             .success(function(data) {
                 $scope.results = data;
                 $scope.loading = false;
@@ -20,7 +33,7 @@ function mainController($scope, $http) {
 
     $scope.getRestaurantResults = function() {
         $scope.loading = true;
-        $http.get('/api/search/restaurants/' +  $scope.location.text + '/20')
+        $http.get('/api/search/restaurants/' + $scope.location.text + '/20')
             .success(function(data) {
                 $scope.results = data;
                 $scope.loading = false;
