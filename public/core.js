@@ -24,6 +24,12 @@ function mainController($scope, $http) {
                 $scope.location.text = latitude + ', ' + longitude;
                 document.getElementById('accuracy').textContent = 'Geoloc accuracy: ' + (accuracy * 0.00062137).toFixed(2) + ' mi';
                 document.getElementById('location').value = latitude + ', ' + longitude;
+            }, function(err) {
+                console.log('Geolocation error: ' + err);
+            }, {
+                enableHighAccuracy: true, 
+                timeout: 30000, 
+                maximumAge: 10000
             });
         } else {
             alert('Geolocation is not supported by this browser');
