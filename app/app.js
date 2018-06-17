@@ -13,6 +13,7 @@ const MAX_NUM_REVIEWS = 100000;
 const MAX_NUM_STARS = 5;
 const MAX_NUM_DOLLAR_SIGNS = 4;
 const MAX_NUM_SEARCH_RESULTS = 50;
+const MAX_SEARCH_RADIUS_METERS = 16000; // 16000 m == 10 mi, approx
 
 // Train neural net
 var net = new brain.NeuralNetwork();
@@ -44,8 +45,8 @@ module.exports = function (app) {
 
         if (isEmpty(resultLimit)) {
             resultLimit = 5;
-        } else if (resultLimit > 50) {
-            resultLimit = 50;
+        } else if (resultLimit > MAX_NUM_SEARCH_RESULTS) {
+            resultLimit = MAX_NUM_SEARCH_RESULTS;
         } else if (resultLimit < 0) {
             resultLimit = 5;
         }
@@ -58,6 +59,7 @@ module.exports = function (app) {
         YELP_CLIENT.search({
             term: searchStr,
             location: location,
+            radius: MAX_SEARCH_RADIUS_METERS,
             limit: resultLimit,
             sort_by: 'rating',
             open_now: true
@@ -128,11 +130,10 @@ module.exports = function (app) {
                     bestResultIndex = i;
                     bestResultAppeal = output.appeal;
                 }
-
                 // Insert appeal as percentage
                 response.jsonBody.businesses[i]['appeal'] = parseInt((output.appeal * 100).toFixed(0));
             }
-            res.json(response.jsonBody.businesses[bestResultIndex]);
+            res.json([response.jsonBody.businesses[bestResultIndex]]);
         }).catch(e => {
             console.log(e);
         });
@@ -183,8 +184,8 @@ module.exports = function (app) {
         });
     });
 
-    // Train brain by voting for a business
-    app.get('/api/vote/:id/:reviewCount/:numStars/:numDollarSigns/:appeal/:rating', function (req, res) {
+    // Train brain by rating for a business
+    app.get('/api/rate/:id/:reviewCount/:numStars/:numDollarSigns/:appeal/:rating', function (req, res) {
         // If no price is returned, assume one dollar sign ($ / $$$$) or 1/4 = 0.25
         // If valid price range, count # of dollar signs
         var restId = getHash(req.params.id);
