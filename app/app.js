@@ -43,6 +43,7 @@ module.exports = function (app) {
         var location = req.params.location.replace('%20', ' ');
         var resultLimit = req.params.resultLimit;
 
+        // Enforce search result limit
         if (isEmpty(resultLimit)) {
             resultLimit = 5;
         } else if (resultLimit > MAX_NUM_SEARCH_RESULTS) {

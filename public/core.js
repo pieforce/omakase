@@ -21,9 +21,9 @@ function mainController($scope, $http) {
                 var longitude = pos.coords.longitude;
                 var accuracy = pos.coords.accuracy;
                 $scope.showAccuracy = true;
-                $scope.location.text = latitude + ', ' + longitude;
-                document.getElementById('accuracy').textContent = 'Geoloc accuracy: ' + (accuracy * 0.00062137).toFixed(2) + ' mi';
-                document.getElementById('location').value = latitude + ', ' + longitude;
+                $scope.location = latitude + ',' + longitude;
+                document.getElementById('accuracy').textContent = 'Geolocation accuracy: ' + (accuracy * 0.00062137).toFixed(2) + ' mi';
+                document.getElementById('location').value = latitude + ',' + longitude;
             }, function(err) {
                 console.log('Geolocation error: ' + err);
             }, {
@@ -38,7 +38,7 @@ function mainController($scope, $http) {
 
     $scope.getResults = function(searchStr) {
         $scope.loading = true;
-        $http.get('/api/search/' + searchStr + '/' +  $scope.location.text + '/' + NUM_OF_RESULTS)
+        $http.get('/api/search/' + searchStr + '/' +  $scope.location + '/' + NUM_OF_RESULTS)
             .success(function(data) {
                 $scope.results = data;
                 $scope.loading = false;
@@ -51,7 +51,7 @@ function mainController($scope, $http) {
 
     $scope.getBestRestaurant = function() {
         $scope.loading = true;
-        $http.get('/api/decide/restaurants/' + $scope.location.text)
+        $http.get('/api/decide/restaurants/' + $scope.location)
             .success(function(data) {
                 $scope.results = data;
                 $scope.loading = false;
@@ -64,7 +64,7 @@ function mainController($scope, $http) {
 
     $scope.getRestaurantResults = function() {
         $scope.loading = true;
-        $http.get('/api/search/restaurants/' +  $scope.location.text + '/' + NUM_OF_RESULTS)
+        $http.get('/api/search/restaurants/' +  $scope.location + '/' + NUM_OF_RESULTS)
             .success(function(data) {
                 $scope.results = data;
                 $scope.loading = false;
