@@ -39,7 +39,7 @@
 
                         <br>
                         <div ng-show="!showLocationEntry" class="font-weight-bold" style="color:black">Use GPS location?</div>
-                        <button type="submit" class="btn btn-primary btn-md" ng-show="!showLocationEntry" ng-click="getLocation();toggleLocationEntry();">Yes</button>
+                        <button type="submit" class="btn btn-primary btn-md" ng-show="!showLocationEntry" ng-click="getLocationAndSearch();toggleLocationEntry();">Yes</button>
                         <button class="btn btn-secondary btn-md" ng-show="!showLocationEntry" ng-click="toggleLocationEntry()">No</button>
                         <div ng-show="!showLocationEntry" class="font-weight-light font-italic" style="color:black">No location data is saved</div>
 

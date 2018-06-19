@@ -36,6 +36,38 @@ function mainController($scope, $http) {
         }
     }
 
+    $scope.getLocationAndSearch = function() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(pos) {
+                var latitude = pos.coords.latitude;
+                var longitude = pos.coords.longitude;
+                var accuracy = pos.coords.accuracy;
+                $scope.loading = true;
+                $scope.showAccuracy = true;
+                $scope.location = latitude + ',' + longitude;
+                document.getElementById('accuracy').textContent = 'Geolocation accuracy: ' + (accuracy * 0.00062137).toFixed(2) + ' mi';
+                document.getElementById('location').value = latitude + ',' + longitude;
+                $http.get('/api/search/restaurants/' +  $scope.location + '/' + NUM_OF_RESULTS)
+                    .success(function(data) {
+                        $scope.results = data;
+                        $scope.loading = false;
+                    })
+                    .error(function(data) {
+                        console.log('Error: ' + data);
+                        $scope.loading = false;
+                    })
+            }, function(err) {
+                console.log('Geolocation error: ' + err);
+            }, {
+                enableHighAccuracy: true, 
+                timeout: 30000, 
+                maximumAge: 10000
+            });
+        } else {
+            alert('Geolocation is not supported by this browser');
+        }
+    }
+
     $scope.getResults = function(searchStr) {
         $scope.loading = true;
         $http.get('/api/search/' + searchStr + '/' +  $scope.location + '/' + NUM_OF_RESULTS)
