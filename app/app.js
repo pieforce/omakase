@@ -21,16 +21,20 @@ var trainedNet = null;
 mongo.connect(apiConfig.mlabUrl, (err, db) => {
     if (err) throw err;
     var dbo = db.db(apiConfig.mlabDatabase);
-    dbo.collection(apiConfig.mlabCollection).findOne({'info.snapshot' : apiConfig.mlabSnapshot}, function(err, result) {
-        if (err) throw err;
-        net.train(result.data);
-        trainedNet = net.toFunction();
-        db.close();
+    dbo.collection(apiConfig.mlabTrainingCollection).findOne(
+        {
+            'info.snapshot' : apiConfig.mlabTrainingSnapshot
+        }, function(err, result) {
+            if (err) throw err;
+            net.train(result.data);
+            trainedNet = net.toFunction();
+            db.close();
 
-        console.log('!----------[BRAIN START]----------!');
-        console.log(' * Training snapshot loaded: ' + apiConfig.mlabSnapshot);
-        console.log('!----------[BRAIN START]----------!');
-    });
+            console.log('!----------[BRAIN START]----------!');
+            console.log(' * Training snapshot loaded: ' + apiConfig.mlabTrainingSnapshot);
+            console.log('!----------[BRAIN START]----------!');
+        }
+    );
 });
 
 // API Routes
@@ -57,14 +61,17 @@ module.exports = function (app) {
         console.log(' * location: ' + location);
         console.log('!----------[SEARCH]----------!');
 
-        YELP_CLIENT.search({
+        var searchParams = {
             term: searchStr,
             location: location,
             radius: MAX_SEARCH_RADIUS_METERS,
             limit: resultLimit,
             sort_by: 'rating',
             open_now: true
-        }).then(response => {
+        }
+
+        // Search and run analysis on results
+        YELP_CLIENT.search(searchParams).then(response => {
             for (var i=0; i < response.jsonBody.businesses.length; i++) {
                 var result = response.jsonBody.businesses[i];
                 // If no price is returned, assume one dollar sign ($ / $$$$) or 1/4 = 0.25
@@ -88,6 +95,32 @@ module.exports = function (app) {
         }).catch(e => {
             console.log(e);
         });
+
+        // Log metrics
+        searchParams['ip'] = req.connection.remoteAddress;
+        searchParams['timestamp'] = new Date();
+        mongo.connect(apiConfig.mlabUrl, (err, db) => {
+            if (err) throw err;
+            var dbo = db.db(apiConfig.mlabDatabase);
+            dbo.collection(apiConfig.mlabMetricsCollection).updateOne(
+                { 
+                    info: {
+                        snapshot: apiConfig.mlabMetricsSnapshot
+                    } 
+                },
+                {
+                    $push: {
+                        api: {
+                            searchParams
+                        }
+                    }
+                }, function(err, result) {
+                    if (err) throw err;
+                    console.log('MongoDB updates: ' + result.result.n);
+                    db.close();
+                }
+            );
+        });
     });
 
     // Get the best-ranked result after performing Yelp search and running neural net analysis on each result
@@ -101,13 +134,15 @@ module.exports = function (app) {
         console.log(' * location: ' + location);
         console.log('!----------[DECIDE]----------!');
 
-        YELP_CLIENT.search({
+        var decideSearchParams = {
             term: searchStr,
             location: location,
             limit: MAX_NUM_SEARCH_RESULTS,
             sort_by: 'rating',
             open_now: true
-        }).then(response => {
+        }
+
+        YELP_CLIENT.search(decideSearchParams).then(response => {
             var bestResultIndex = 0;
             var bestResultAppeal = 0.00;
             for (var i=0; i < response.jsonBody.businesses.length; i++) {
@@ -137,6 +172,32 @@ module.exports = function (app) {
             res.json([response.jsonBody.businesses[bestResultIndex]]);
         }).catch(e => {
             console.log(e);
+        });
+
+        // Log metrics
+        decideSearchParams['ip'] = req.connection.remoteAddress;
+        decideSearchParams['timestamp'] = new Date();
+        mongo.connect(apiConfig.mlabUrl, (err, db) => {
+            if (err) throw err;
+            var dbo = db.db(apiConfig.mlabDatabase);
+            dbo.collection(apiConfig.mlabMetricsCollection).updateOne(
+                { 
+                    info: {
+                        snapshot: apiConfig.mlabMetricsSnapshot
+                    } 
+                },
+                {
+                    $push: {
+                        api: {
+                            decideSearchParams
+                        }
+                    }
+                }, function(err, result) {
+                    if (err) throw err;
+                    console.log('MongoDB updates: ' + result.result.n);
+                    db.close();
+                }
+            );
         });
     });
 
@@ -240,10 +301,10 @@ module.exports = function (app) {
         mongo.connect(apiConfig.mlabUrl, (err, db) => {
             if (err) throw err;
             var dbo = db.db(apiConfig.mlabDatabase);
-            dbo.collection(apiConfig.mlabCollection).update(
+            dbo.collection(apiConfig.mlabTrainingCollection).updateOne(
                 { 
                     info: {
-                        snapshot: apiConfig.mlabSnapshot
+                        snapshot: apiConfig.mlabTrainingSnapshot
                     } 
                 },
                 {
@@ -258,6 +319,41 @@ module.exports = function (app) {
                             output: {
                                 appeal: adjAppeal
                             }
+                        }
+                    }
+                }, function(err, result) {
+                    if (err) throw err;
+                    console.log('MongoDB updates: ' + result.result.n);
+                    db.close();
+                }
+            );
+        });
+
+        var ratingParams = {
+            id: restId,
+            review_count: reviewCount,
+            rating: numStars,
+            userRating: userRating,
+            price: numDollarSigns,
+            appeal: adjAppeal
+        }
+
+        // Log metrics
+        ratingParams['ip'] = req.connection.remoteAddress;
+        ratingParams['timestamp'] = new Date();
+        mongo.connect(apiConfig.mlabUrl, (err, db) => {
+            if (err) throw err;
+            var dbo = db.db(apiConfig.mlabDatabase);
+            dbo.collection(apiConfig.mlabMetricsCollection).updateOne(
+                { 
+                    info: {
+                        snapshot: apiConfig.mlabMetricsSnapshot
+                    } 
+                },
+                {
+                    $push: {
+                        api: {
+                            ratingParams
                         }
                     }
                 }, function(err, result) {
