@@ -20,6 +20,7 @@ function mainController($scope, $http) {
                 var latitude = pos.coords.latitude;
                 var longitude = pos.coords.longitude;
                 var accuracy = pos.coords.accuracy;
+                $scope.loading = true;
                 $scope.showAccuracy = true;
                 $scope.location = latitude + ',' + longitude;
                 document.getElementById('accuracy').textContent = 'Geolocation accuracy: ' + (accuracy * 0.00062137).toFixed(2) + ' mi';
