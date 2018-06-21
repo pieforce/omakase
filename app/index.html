@@ -86,6 +86,17 @@
                                         </span>
                                     </div>
                                 </p>
+                                <p>
+                                    <form class="rating-form-{{result.id}}">
+                                        <button class="btn btn-outline-secondary btn-sm disabled" name="{{result.id}}-1" ng-click="updateUserRating(result.id, 1)">★</button>
+                                        <button class="btn btn-outline-secondary btn-sm disabled" name="{{result.id}}-2" ng-click="updateUserRating(result.id, 2)">★</button>
+                                        <button class="btn btn-outline-secondary btn-sm disabled" name="{{result.id}}-3" ng-click="updateUserRating(result.id, 3)">★</button>
+                                        <button class="btn btn-outline-secondary btn-sm disabled" name="{{result.id}}-4" ng-click="updateUserRating(result.id, 4)">★</button>
+                                        <button class="btn btn-outline-secondary btn-sm disabled" name="{{result.id}}-5" ng-click="updateUserRating(result.id, 5)">★</button>
+                                        <br>
+                                        <a href="" name="rating-submit-{{result.id}}" ng-click="submitRating(result.id, result.review_count, result.rating, result.price, result.appeal)"> Submit your rating</a>
+                                    </form>
+                                </p>
                             </div>
                         </td>
                     </tr>
