@@ -65,11 +65,11 @@
             </div>
             
             <!-- RESULT LIST -->
-            <div id="results-list" style="padding:3%">
+            <div id="results-list" style="padding: 3%">
                 <ul class="list-unstyled">
                     <!-- LOOP OVER THE RESULTS IN $scope.results -->
                     <li class="media" ng-repeat="result in results | orderBy:'-appeal'">
-                        <img style="max-width: 30%" class="align-self-start mr-3" src="{{ result.image_url }}" alt="{{ result.name }}">
+                        <img style="max-width: 30%; padding: 1%;" class="align-self-start mr-3" src="{{ result.image_url }}" alt="{{ result.name }}">
                         <!-- <div class="carousel-item">
                             <img src="{{ result.image_url }}" alt="{{ result.name }}">
                         </div> -->
