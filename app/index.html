@@ -63,44 +63,41 @@
             </div>
 
             <!-- RESULT LIST -->
-            <div class="container-fluid">
-                <table class="table">
+            <div id="results-list" style="padding: 3%">
+                <ul class="list-unstyled">
                     <!-- LOOP OVER THE RESULTS IN $scope.results -->
-                    <tr class="row" ng-repeat="result in results | orderBy:'-appeal'">
-                        <td class="col-4">
-                            <img class="img-fluid align-top" src="{{ result.image_url }}" alt="{{ result.name }}">
-                        </td>
-                        <td class="col-8">
-                            <h4>{{$index + 1}}. <a href="{{ result.url }}">{{ result.name }}</a></h4>
-                            <div>
-                                <p>
-                                    <div>
-                                        <h5><strong style="color:rgb(185, 49, 0)">{{ result.appeal }}%</strong> appeal</h5> 
-                                    </div>
-                                    <div>{{ result.rating }} stars  -  {{ result.review_count }} Reviews</div>
-                                </p>
-                                <p>
-                                    <div>{{ result.price }}  -  {{ (result.distance * 0.00062137).toFixed(2) }} mi  -  {{ result.is_closed == true ? 'Closed' : 'Open now' }}  -  
-                                        <span ng-repeat="category in result.categories">
-                                            {{ category.title }}. 
-                                        </span>
-                                    </div>
-                                </p>
-                                <p>
-                                    <form class="rating-form-{{result.id}}">
-                                        <button class="btn btn-outline-secondary btn-sm disabled" name="{{result.id}}-1" ng-click="updateUserRating(result.id, 1)">★</button>
-                                        <button class="btn btn-outline-secondary btn-sm disabled" name="{{result.id}}-2" ng-click="updateUserRating(result.id, 2)">★</button>
-                                        <button class="btn btn-outline-secondary btn-sm disabled" name="{{result.id}}-3" ng-click="updateUserRating(result.id, 3)">★</button>
-                                        <button class="btn btn-outline-secondary btn-sm disabled" name="{{result.id}}-4" ng-click="updateUserRating(result.id, 4)">★</button>
-                                        <button class="btn btn-outline-secondary btn-sm disabled" name="{{result.id}}-5" ng-click="updateUserRating(result.id, 5)">★</button>
-                                        <br>
-                                        <a href="" name="rating-submit-{{result.id}}" ng-click="submitRating(result.id, result.review_count, result.rating, result.price, result.appeal)"> Submit your rating</a>
-                                    </form>
-                                </p>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                    <li class="media" ng-repeat="result in results | orderBy:'-appeal'">
+                        <img style="max-width: 30%; padding: 1%;" class="align-self-start mr-3" src="{{ result.image_url }}" alt="{{ result.name }}">
+                        <!-- <div class="carousel-item">
+                            <img src="{{ result.image_url }}" alt="{{ result.name }}">
+                        </div> -->
+                        <div class="media-body">
+                            <h3 class="mt-0"><a href="{{ result.url }}">{{ result.name }}</a> ({{ result.appeal }}%)</h3>
+                            <p>
+                                <form class="rating-form-{{result.id}}">
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-1" ng-click="updateUserRating(result.id, 1)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-2" ng-click="updateUserRating(result.id, 2)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-3" ng-click="updateUserRating(result.id, 3)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-4" ng-click="updateUserRating(result.id, 4)">★</button>
+                                    <button class="btn btn-outline-danger btn-sm" name="{{result.id}}-5" ng-click="updateUserRating(result.id, 5)">★</button>
+                                    <a href="" name="rating-submit-{{result.id}}" ng-click="submitRating(result.id, result.review_count, result.rating, result.price, result.appeal)"> Submit rating</a>
+                                </form>
+                            </p>
+                            <p>
+                                <h5>{{ result.rating }} stars  -  {{ result.review_count }} Reviews</h5>
+                                <div>{{ result.price }}  -  {{ result.is_closed == true ? 'Closed' : 'Open now' }}  -  
+                                    <span ng-repeat="category in result.categories">
+                                        {{ category.title }}. 
+                                    </span>
+                                </div>
+                                <div></div>
+                            </p>
+                            <p>
+                                <div>{{ (result.distance * 0.00062137).toFixed(2) }} mi</div>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </body>
