@@ -104,6 +104,7 @@ module.exports = function (app) {
             term: searchStr,
             location: location,
             limit: MAX_NUM_SEARCH_RESULTS,
+            radius: MAX_SEARCH_RADIUS_METERS,
             sort_by: 'rating',
             open_now: true
         }).then(response => {
@@ -292,5 +293,4 @@ function getHash(str) {
     }
     hash = '0.' + Math.abs(hash);
     return hash;
-
 }
