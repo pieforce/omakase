@@ -1,0 +1,37 @@
+{
+  "name": "omakase",
+  "version": "1.0.0",
+  "description": "Machine learning restaurant suggestion app",
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.18.1",
+    "body-parser": "^1.18.3",
+    "brain.js": "^1.2.1",
+    "express": "^4.16.3",
+    "method-override": "^2.3.10",
+    "mongodb": "^3.0.10",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.17.5",
+    "npm": "^6.13.4",
+    "yelp-api-v3": "^1.5.0",
+    "yelp-fusion": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pieforce/omakase.git"
+  },
+  "keywords": [
+    "omakase"
+  ],
+  "author": "wng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pieforce/omakase/issues"
+  },
+  "homepage": "https://github.com/pieforce/omakase#readme"
+}

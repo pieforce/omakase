@@ -96,31 +96,9 @@ module.exports = function (app) {
             console.log(e);
         });
 
-        // Log metrics
-        searchParams['ip'] = req.connection.remoteAddress;
-        searchParams['timestamp'] = new Date();
-        mongo.connect(apiConfig.mlabUrl, (err, db) => {
-            if (err) throw err;
-            var dbo = db.db(apiConfig.mlabDatabase);
-            dbo.collection(apiConfig.mlabMetricsCollection).updateOne(
-                { 
-                    info: {
-                        snapshot: apiConfig.mlabMetricsSnapshot
-                    } 
-                },
-                {
-                    $push: {
-                        api: {
-                            searchParams
-                        }
-                    }
-                }, function(err, result) {
-                    if (err) throw err;
-                    console.log('MongoDB updates: ' + result.result.n);
-                    db.close();
-                }
-            );
-        });
+        // TODO: Log metrics
+        // searchParams['ip'] = req.connection.remoteAddress;
+        // searchParams['timestamp'] = new Date();
     });
 
     // Get the best-ranked result after performing Yelp search and running neural net analysis on each result
@@ -176,30 +154,8 @@ module.exports = function (app) {
         });
 
         // Log metrics
-        decideSearchParams['ip'] = req.connection.remoteAddress;
-        decideSearchParams['timestamp'] = new Date();
-        mongo.connect(apiConfig.mlabUrl, (err, db) => {
-            if (err) throw err;
-            var dbo = db.db(apiConfig.mlabDatabase);
-            dbo.collection(apiConfig.mlabMetricsCollection).updateOne(
-                { 
-                    info: {
-                        snapshot: apiConfig.mlabMetricsSnapshot
-                    } 
-                },
-                {
-                    $push: {
-                        api: {
-                            decideSearchParams
-                        }
-                    }
-                }, function(err, result) {
-                    if (err) throw err;
-                    console.log('MongoDB updates: ' + result.result.n);
-                    db.close();
-                }
-            );
-        });
+        // decideSearchParams['ip'] = req.connection.remoteAddress;
+        // decideSearchParams['timestamp'] = new Date();
     });
 
     // Get details of a business based on Yelp ID
@@ -298,37 +254,18 @@ module.exports = function (app) {
             }
         });
 
-        // Save rating info to training database
-        mongo.connect(apiConfig.mlabUrl, (err, db) => {
-            if (err) throw err;
-            var dbo = db.db(apiConfig.mlabDatabase);
-            dbo.collection(apiConfig.mlabTrainingCollection).updateOne(
-                { 
-                    info: {
-                        snapshot: apiConfig.mlabTrainingSnapshot
-                    } 
-                },
-                {
-                    $push: {
-                        data: {
-                            input: {
-                                id: restId,
-                                review_count: reviewCount,
-                                rating: numStars,
-                                price: numDollarSigns
-                            },
-                            output: {
-                                appeal: adjAppeal
-                            }
-                        }
-                    }
-                }, function(err, result) {
-                    if (err) throw err;
-                    console.log('MongoDB updates: ' + result.result.n);
-                    db.close();
-                }
-            );
-        });
+        // TODO: Save rating info to training database
+        // data: {
+        //     input: {
+        //         id: restId,
+        //         review_count: reviewCount,
+        //         rating: numStars,
+        //         price: numDollarSigns
+        //     },
+        //     output: {
+        //         appeal: adjAppeal
+        //     }
+        // }
 
         var ratingParams = {
             id: restId,
@@ -339,31 +276,9 @@ module.exports = function (app) {
             appeal: adjAppeal
         }
 
-        // Log metrics
-        ratingParams['ip'] = req.connection.remoteAddress;
-        ratingParams['timestamp'] = new Date();
-        mongo.connect(apiConfig.mlabUrl, (err, db) => {
-            if (err) throw err;
-            var dbo = db.db(apiConfig.mlabDatabase);
-            dbo.collection(apiConfig.mlabMetricsCollection).updateOne(
-                { 
-                    info: {
-                        snapshot: apiConfig.mlabMetricsSnapshot
-                    } 
-                },
-                {
-                    $push: {
-                        api: {
-                            ratingParams
-                        }
-                    }
-                }, function(err, result) {
-                    if (err) throw err;
-                    console.log('MongoDB updates: ' + result.result.n);
-                    db.close();
-                }
-            );
-        });
+        // TODO: Log metrics
+        // ratingParams['ip'] = req.connection.remoteAddress;
+        // ratingParams['timestamp'] = new Date();
     });
 
     // application -------------------------------------------------------------
