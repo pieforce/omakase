@@ -7,7 +7,7 @@
     "axios": "^0.18.1",
     "body-parser": "^1.18.3",
     "brain.js": "^1.2.1",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "method-override": "^2.3.10",
     "mongodb": "^3.0.10",
     "morgan": "^1.9.1",
